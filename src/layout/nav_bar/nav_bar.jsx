@@ -40,16 +40,16 @@ function NavBar() {
   const renderItems = (
     <>
       {navItems?.map((item, index) => (
-        <Typography sx={{"&:hover": { color: "secondary.main"}}} key={index}>{item}</Typography>
+        <Typography  key={index}>{item}</Typography>
       ))}
     </>
   );
 
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "white" }} >
+    <AppBar position="static" sx={{ backgroundColor: "white" }}   >
 
-      <Toolbar disableGutters>
+      <Toolbar disableGutters className="apply--maxwidth" sx={{width:"100%",py:0}} >
 
         {/* MOBILE VIEW */}
         <Box sx={{ display: { xs: "flex", md: "none" }, justifyContent: "space-between", width: "100%", alignItems: "center" }}>
@@ -128,7 +128,7 @@ function NavBar() {
 
 
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Divider orientation="vertical" variant="middle" flexItem sx={{ height: "25px", bgcolor: "#232323", borderLeftWidth: 1.5 }} />
+            <Divider orientation="vertical" variant="middle" flexItem sx={{ height: "25px", bgcolor: "#232323", borderLeftWidth: 1 }} />
             <Box sx={{ mx: "0.5rem", display: "flex", alignItems: "center" }}>
               <LinkedInIcon />
               <PinterestIcon />
@@ -136,7 +136,7 @@ function NavBar() {
               <YouTubeIcon />
               <FacebookIcon />
             </Box>
-            <Divider orientation="vertical" variant="middle" flexItem sx={{ height: "25px", bgcolor: "#232323", borderRightWidth: 1.5 }} />
+            <Divider orientation="vertical" variant="middle" flexItem sx={{ height: "25px", bgcolor: "#232323", borderLeftWidth: 1}} />
           </Box>
         </Box>
 

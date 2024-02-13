@@ -11,7 +11,7 @@ const theme = createTheme({
       secondary_400: "#480765",
       secondary_600: "#6a1067",
     },
-    tertiary: {
+    accent: {
       main: "#f58220",
     },
   },
@@ -26,6 +26,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Roboto Serif",
+    fontWeightRegular:"400",
+    fontWeightMedium:"500",
+    fontWeightBold:"700"
   },
 });
 
