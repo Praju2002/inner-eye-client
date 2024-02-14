@@ -2,7 +2,7 @@
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
+  padding: 0;
 }
 .responsive_fontsize14 {
     font-size: clamp(0.75rem, 1vw + 0.25rem, 0.9rem);
@@ -19,4 +19,12 @@
 
 .responsive_fontsize32{
     font-size: clamp(1.8rem, 2vw, 2rem) !important;
+}
+/* Center Carousel React Slick */
+.center__carousel .slick-slide > div {
+  display: grid;
+  place-items: center;
+  /* width: 80%; */
+  margin: auto;
+  padding: 0px;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import OrangeDivider from 'src/components/ui/orange_divider';
 
 import yoga from "../../../assets/images/yoga.png";
@@ -26,19 +26,20 @@ function FirstSectionLanding() {
           gap: "1.5rem",
         }}
       >
-        <h1
-          style={{
+        <Typography variant="h1"
+          sx={{
             fontSize: "30px",
             fontWeight: "600",
+            color: "secondary.secondary_400"
             
           }}
         >
             <OrangeDivider>
-            Inner Eye
+            INNER EYE
             </OrangeDivider>
           
-        </h1>
-        <p className="responsive_fontsize20">
+        </Typography>
+        <p className="responsive_fontsize20" >
           Nestled in the lap of the Himalayas in Nepal, Inner Eye is not just a
           retreat; it's a sanctuary for the mind, body, and spirit. Our
           personalized packages cater to your unique needs, offering a blend of
