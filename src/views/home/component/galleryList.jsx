@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import ServiceCard from './service_card'
 import Slider from 'react-slick';
+import GalleryCard from './galleryCard';
 
-function ServiceList() {
+function GalleryList() {
     const settings = {
         
         dots: true,
-        infinite: true,
+        // infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -17,7 +17,7 @@ function ServiceList() {
         focusOnSelect: true,
         responsive: [
             {
-              breakpoint: 1250,
+              breakpoint: 1300,
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
@@ -26,7 +26,7 @@ function ServiceList() {
               }
             },
             {
-              breakpoint: 950,
+              breakpoint: 1050,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
@@ -34,7 +34,7 @@ function ServiceList() {
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 700,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
@@ -45,17 +45,17 @@ function ServiceList() {
     return (
         <Box className="center__carousel" sx={{ padding: "47px" }} >
             <Slider {...settings}>
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
+                <GalleryCard />
+                <GalleryCard />
+                <GalleryCard />
+                <GalleryCard />
+                <GalleryCard />
+                <GalleryCard />
+                <GalleryCard />
+                <GalleryCard />
             </Slider>
         </Box>
     )
 }
 
-export default ServiceList
+export default GalleryList

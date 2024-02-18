@@ -13,17 +13,21 @@ function SecondSectionServices() {
   const [openFreeBookDialogue, setOpenFreeBookDialogue] = useState(false);
   return (
     <Box sx={{ padding: "0px" }}>
-      <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", paddingTop: "68.5px" }} >
+
+      <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", marginBottom: "13.5px", marginTop: "13.5px" }} >
         <OrangeDivider >
           <Typography sx={{ fontSize: "13px", letterSpacing: "4px", color: "secondary.secondary_600", fontFamily: "Arial" }} >Best Services</Typography>
         </OrangeDivider>
-        <Typography variant='h3' className='responsive_fontsize32' sx={{ color: "secondary.secondary_400", fontWeight: "bold", letterSpacing: "0.25px", lineHeight: "42px", paddingTop: "13.5px", fontFamily: "times new roman" }}>Services</Typography>
+        <Typography variant='h3' className='responsive_fontsize32' sx={{ color: "secondary.secondary_400", fontWeight: "bold", letterSpacing: "0.25px", lineHeight: "42px", marginBottom: "11px", fontFamily: "times new roman" }}>Services</Typography>
       </Box>
-      <Box>
+
+      <Box sx={{ pt: "47px", pb: "27px" }}>
         <ServiceList />
         {/* <ServiceCard /> */}
       </Box>
-      <Box sx={{ display: "flex", justifyContent: "center", gap: "30px", paddingTop: "22px" }}>
+
+
+      <Box sx={{ display: "flex", justifyContent: "center", gap: "30px", my: "40px" }}>
         <Button onClick={() => setOpenRegistrationDialogue(true)}
           className="responsive_fontsize18" variant='outlined'
           sx={{ borderRadius: "0", color: "black", borderColor: "secondary.main", textTransform: "capitalize", fontWeight: "300", lineHeight: "21px", letterSpacing: "0.25px" }}>Registration</Button>
@@ -43,12 +47,12 @@ function SecondSectionServices() {
         aria-describedby="alert-dialog-slide-description"
         maxWidth="sm"
         fullWidth
-        
-     
+
+
       >
 
         <DialogContent>
-          <RegistrationFormPopUp/>
+          <RegistrationFormPopUp />
         </DialogContent>
 
       </Dialog>
@@ -63,11 +67,12 @@ function SecondSectionServices() {
       >
 
         <DialogContent>
-          <FreeEbookFormPopUp/>
+          <FreeEbookFormPopUp />
         </DialogContent>
 
       </Dialog>
     </Box>
+
   )
 }
 

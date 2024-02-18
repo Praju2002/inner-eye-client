@@ -1,17 +1,18 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import ServiceCard from './service_card'
+import PodcastCard from './podcastCard'
 import Slider from 'react-slick';
 
-function ServiceList() {
+function PodcastList() {
     const settings = {
         
-        dots: true,
+        dots: false,
+        arrows:true,
         infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         arrows: false,
         pauseOnHover: true,
         focusOnSelect: true,
@@ -45,17 +46,16 @@ function ServiceList() {
     return (
         <Box className="center__carousel" sx={{ padding: "47px" }} >
             <Slider {...settings}>
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
+                <PodcastCard />
+                <PodcastCard />
+                <PodcastCard /> 
+                <PodcastCard />
+                <PodcastCard /> 
+                <PodcastCard />
+                <PodcastCard /> 
             </Slider>
         </Box>
     )
 }
 
-export default ServiceList
+export default PodcastList

@@ -15,67 +15,68 @@ import {
     Button,
     Grid,
 } from "@mui/material";
+import { useState } from "react";
 
 function RegistrationFormPopup() {
+    const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
+    const [age, setAge] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [occupation, setOccupation] = useState("");
+    const [medicalHistory, setMedicalHistory] = useState("");
+    const [packageType, setPackageType] = useState("");
+    const [affilation, setAffiliation] = useState("");
+    const [teamSize, setTeamSize] = useState("single");
+    const [memberNumber, setMemberNumber] = useState("");
+    const [isTermsChecked, setIsTermsChecked] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("data", name, age, gender, email, address, phoneNumber, occupation, medicalHistory, packageType, affilation, teamSize, memberNumber, isTermsChecked);
+        
+
+    }
+
+    const handleNameChange = (e) => {
+        console.log("name", e);
+        setName(e.target.value)
+    }
+
     return (
         <div>
             {/* Heading */}
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                }}
-            >
-                <Box>
-                    <Typography
-                        className="responsive__fontsize18"
-                        sx={{
-                            fontWeight: "600",
-                            lineHeight: "21px",
-                            color: "secondary.secondary_600",
-                            textTransform: "uppercase",
-                        }}
-                    >
-                        Inner Eye
-                    </Typography>
-                    <Typography
-                        sx={{
-                            fontWeight: "300",
-                            color: "secondary.secondary_600",
-                            mt: "7px",
-                        }}
-                        className="responsive__fontsize14"
-                    >
-                        Registration Form
-                    </Typography>
-                </Box>
-                <Box>
-                    <Typography
-                        className="responsive__fontsize14"
-                        sx={{
-                            lineHeight: "16px",
-                            color: "secondary.secondary_600",
-                            textTransform: "uppercase",
-                        }}
-                    >
-                        Form Number
-                    </Typography>
-                    <Typography
-                        className="responsive__fontsize14"
-                        sx={{
-                            lineHeight: "16px",
-                            color: "secondary.secondary_600",
-                            textTransform: "uppercase",
-                        }}
-                    >
-                        211
-                    </Typography>
-                </Box>
+            <Box>
+                <Typography
+                    className="responsive__fontsize18"
+                    sx={{
+                        fontWeight: "600",
+                        lineHeight: "21px",
+                        color: "secondary.secondary_600",
+                        textTransform: "uppercase",
+                        textAlign: "center"
+                    }}
+                >
+                    Inner Eye
+                </Typography>
+                <Typography
+                    sx={{
+                        fontWeight: "300",
+                        color: "secondary.secondary_600",
+                        mt: "7px",
+                        textAlign: "center"
+                    }}
+                    className="responsive__fontsize14"
+                >
+                    Registration Form
+                </Typography>
             </Box>
+
+
             {/* Actual Form */}
             <Box sx={{ mt: "1rem" }}>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <Grid
                         container
                         rowSpacing={1}
@@ -88,6 +89,8 @@ function RegistrationFormPopup() {
                                 label="Name"
                                 variant="outlined"
                                 size="small"
+                                value={name}
+                                onChange={handleNameChange}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                             />
                         </Grid>
@@ -101,8 +104,9 @@ function RegistrationFormPopup() {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    // value={age}
+                                    value={gender}
                                     label="Gender"
+                                    onChange={(e) => setGender(e.target.value)}
 
                                 // onChange={handleChange}
                                 >
@@ -119,6 +123,8 @@ function RegistrationFormPopup() {
                                 id="outlined-basic"
                                 label="Age"
                                 variant="outlined"
+                                value={age}
+                                onChange={(e) => setAge(e.target.value)}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                                 size="small"
                             />
@@ -132,6 +138,8 @@ function RegistrationFormPopup() {
                                 variant="outlined"
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                                 size="small"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </Grid>
                         <Grid item xs={12} md={6}>
@@ -141,6 +149,8 @@ function RegistrationFormPopup() {
                                 id="outlined-basic"
                                 label="Address"
                                 variant="outlined"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                                 size="small"
                             />{" "}
@@ -152,6 +162,8 @@ function RegistrationFormPopup() {
                                 label="Phone Number"
                                 variant="outlined"
                                 size="small"
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                             />{" "}
                         </Grid>
@@ -162,6 +174,8 @@ function RegistrationFormPopup() {
                                 label="Occupation"
                                 variant="outlined"
                                 size="small"
+                                value={occupation}
+                                onChange={(e) => setOccupation(e.target.value)}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                             />{" "}
                         </Grid>
@@ -172,6 +186,8 @@ function RegistrationFormPopup() {
                                 label="Medical History"
                                 variant="outlined"
                                 size="small"
+                                value={medicalHistory}
+                                onChange={(e) => setMedicalHistory(e.target.value)}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                             />{" "}
                         </Grid>
@@ -187,7 +203,8 @@ function RegistrationFormPopup() {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    // value={age}
+                                    value={packageType}
+                                    onChange={(e) => setPackageType(e.target.value)}
                                     label="Package Type"
                                 // onChange={handleChange}
                                 >
@@ -204,6 +221,8 @@ function RegistrationFormPopup() {
                                 label="Any other affilations"
                                 variant="outlined"
                                 size="small"
+                                value={affilation}
+                                onChange={(e) => setAffiliation(e.target.value)}
                                 sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
                             />{" "}
                         </Grid>
@@ -220,6 +239,8 @@ function RegistrationFormPopup() {
                                     row
                                     aria-labelledby="demo-row-radio-buttons-group-label"
                                     name="row-radio-buttons-group"
+                                    value={teamSize}
+                                    onChange={(e) => setTeamSize(e.target.value)}
                                 >
                                     <FormControlLabel
                                         value="single"
@@ -234,23 +255,27 @@ function RegistrationFormPopup() {
                                 </RadioGroup>
                             </FormControl>{" "}
                         </Grid>
-                        <Grid
-                            item
-                            xs={12}
-                            sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <TextField
-                                fullWidth
-                                id="outlined-basic"
-                                label="Enter Member Number"
-                                variant="outlined"
-                                size="small"
-                                sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
-                            />{" "}
-                        </Grid>
+                        {teamSize !== "single" && (
+                            <Grid
+                                item
+                                xs={12}
+                                sx={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <TextField
+                                    fullWidth
+                                    id="outlined-basic"
+                                    label="Enter Member Number"
+                                    variant="outlined"
+                                    size="small"
+                                    value={memberNumber}
+                                    onChange={(e) => setMemberNumber(e.target.value)}
+                                    sx={{ maxWidth: { xs: "100%", md: "14rem" } }}
+                                />{" "}
+                            </Grid>
+                        )}
                         <Grid
                             item
                             xs={12}
@@ -261,6 +286,8 @@ function RegistrationFormPopup() {
                         >
                             <FormControlLabel
                                 control={<Checkbox defaultChecked />}
+                                value={isTermsChecked}
+                                onChange={(e) => setIsTermsChecked(e.target.value)}
                                 label="I hereby agree to the present and future terms & conditions of inner eye pvt.ltd"
                             />
                         </Grid>
@@ -273,6 +300,7 @@ function RegistrationFormPopup() {
                             }}
                         >
                             <Button
+                                type="submit"
                                 variant="contained"
                                 sx={{ backgroundColor: "secondary.main", color: "white" }}
                             >

@@ -2,7 +2,7 @@
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0;
+  padding: 1rem;
 }
 .responsive_fontsize14 {
     font-size: clamp(0.75rem, 1vw + 0.25rem, 0.9rem);
