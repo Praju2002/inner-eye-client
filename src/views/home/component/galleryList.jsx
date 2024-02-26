@@ -8,10 +8,10 @@ function GalleryList() {
         
         dots: true,
         // infinite: true,
-        speed: 500,
+        // speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
         arrows: false,
         pauseOnHover: true,
         focusOnSelect: true,

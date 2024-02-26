@@ -1,16 +1,32 @@
-import React, { useState } from 'react'
-import { Box, Typography, Button, Dialog, DialogContent, Slide } from '@mui/material'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Box, Typography, Button, Dialog, DialogContent, Slide, CircularProgress } from '@mui/material'
 import OrangeDivider from 'src/components/ui/orange_divider';
 import ServiceList from './serviceList';
 import RegistrationFormPopUp from './registrationFormPopUp';
 import FreeEbookFormPopUp from './freeEbookFormPopUp';
+
+import { fetchServiceList } from 'src/redux/api/home_slice_api';
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+
 function SecondSectionServices() {
+  const dispatch = useDispatch();
+
+  const isServiceListLoading = useSelector((state) => state.home?.isServiceListLoading)
+  const serviceList = useSelector((state) => state.home?.serviceList);
+
   const [openRegistrationDialogue, setOpenRegistrationDialogue] = useState(false);
   const [openFreeBookDialogue, setOpenFreeBookDialogue] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchServiceList());
+  }, [dispatch])
+  console.log("service list state", serviceList, isServiceListLoading);
   return (
     <Box sx={{ padding: "0px" }}>
 
@@ -22,8 +38,12 @@ function SecondSectionServices() {
       </Box>
 
       <Box sx={{ pt: "47px", pb: "27px" }}>
-        <ServiceList />
-        {/* <ServiceCard /> */}
+        {
+          isServiceListLoading ? <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <CircularProgress sx={{ color: "grey" }} />
+          </Box> :
+            (<ServiceList serviceList={serviceList} />)
+        }
       </Box>
 
 

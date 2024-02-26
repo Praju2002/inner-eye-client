@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import {
     Box,
@@ -16,8 +17,10 @@ import {
     Grid,
 } from "@mui/material";
 import { useState } from "react";
+import { addRegistration } from "src/redux/api/home_slice_api";
 
 function RegistrationFormPopup() {
+    const dispatch = useDispatch();
     const [name, setName] = useState("");
     const [gender, setGender] = useState("");
     const [age, setAge] = useState("");
@@ -34,8 +37,12 @@ function RegistrationFormPopup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("data", name, age, gender, email, address, phoneNumber, occupation, medicalHistory, packageType, affilation, teamSize, memberNumber, isTermsChecked);
-        
+        // if(!isTermsChecked) return;
+        const data={
+            name, age, gender, email, address, phoneNumber, occupation, medicalHistory, packageType, affilation, teamSize, memberNumber
+        }
+        console.log(data);
+        dispatch(addRegistration(data))
 
     }
 

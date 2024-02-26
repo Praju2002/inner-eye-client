@@ -4,6 +4,8 @@ import SecondSectionServices from './component/second_section_services'
 import { Box } from '@mui/material'
 import Podcast from './component/thirdSection'
 import Gallery from './component/fourthSection'
+import Blog from './component/FifthSection'
+import EventSection from './component/SixthSection'
 
 function HomeView() {
     return (
@@ -27,6 +29,16 @@ function HomeView() {
             <Box component="section" sx={{ backgroundColor: "white" }}>
                 <div className='apply--maxwidth' >
                     <Gallery />
+                </div>
+            </Box>
+            <Box component="section" sx={{ backgroundColor: "primary.main" }}>
+                <div className='apply--maxwidth' >
+                    <Blog />
+                </div>
+            </Box>
+            <Box component="section" sx={{ backgroundColor: "white" }}>
+                <div className='apply--maxwidth' >
+                    <EventSection />
                 </div>
             </Box>
         </main>

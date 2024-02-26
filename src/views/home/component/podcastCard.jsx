@@ -12,6 +12,7 @@ function PodcastCard() {
                     image={podcast}
                     alt="green iguana"
                 />
+                  </CardActionArea>
                 <CardContent>
                     <Typography className="responsive_fontsize16" sx={{ fontWeight: "700", fontFamily: "Roboto Serif", color: "black", }} gutterBottom>
                         Lorem ipsum dolor sit amet
@@ -20,7 +21,7 @@ function PodcastCard() {
                         Lorem ipsum dolor sit amet dolor sit bdsa Lorem ipsum dolor sit amet dolor sit bdsa Lorem ipsum dolor sit amet dolor sit bdsa
                     </Typography>
                 </CardContent>
-            </CardActionArea>
+          
         </Card>
     )
 }

@@ -3,6 +3,8 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
+import CancelIcon from "@mui/icons-material/Cancel";
+
 import Typography from "@mui/material/Typography";
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
@@ -40,7 +42,7 @@ function NavBar() {
   const renderItems = (
     <>
       {navItems?.map((item, index) => (
-        <Typography  key={index}>{item}</Typography>
+        <Typography key={index}>{item}</Typography>
       ))}
     </>
   );
@@ -49,7 +51,7 @@ function NavBar() {
   return (
     <AppBar position="static" sx={{ backgroundColor: "white" }}   >
 
-      <Toolbar disableGutters className="apply--maxwidth" sx={{width:"100%",py:0}} >
+      <Toolbar disableGutters className="apply--maxwidth" sx={{ width: "100%", py: 0 }} >
 
         {/* MOBILE VIEW */}
         <Box sx={{ display: { xs: "flex", md: "none" }, justifyContent: "space-between", width: "100%", alignItems: "center" }}>
@@ -136,7 +138,7 @@ function NavBar() {
               <YouTubeIcon />
               <FacebookIcon />
             </Box>
-            <Divider orientation="vertical" variant="middle" flexItem sx={{ height: "25px", bgcolor: "#232323", borderLeftWidth: 1}} />
+            <Divider orientation="vertical" variant="middle" flexItem sx={{ height: "25px", bgcolor: "#232323", borderLeftWidth: 1 }} />
           </Box>
         </Box>
 
@@ -146,14 +148,16 @@ function NavBar() {
         anchor="top"
         open={isMobileDrawerOpen}
         onClose={() => setIsMobileDrawerOpen(false)}
+        variant="temporary"
       >
+        <Box sx={{ display: "flex", justifyContent: "flex-end", padding: "0.5rem" }}>
+          <IconButton onClick={() => setIsMobileDrawerOpen(false)}>
+            <CancelIcon />
+          </IconButton>
+        </Box>
         <Box sx={{ textAlign: "center", letterSpacing: ".2rem", display: "flex", flexDirection: "column", justifyContent: "center", gap: "1.5rem", paddingY: 2 }}>
           {renderItems}
         </Box>
-        
-          
-        
-        {/* {list(anchor)} */}
       </Drawer>
     </AppBar>
   );

@@ -1,23 +1,23 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import ServiceCard from './service_card'
 import Slider from 'react-slick';
+import BlogCard from './BlogCard';
 
-function ServiceList({serviceList}) {
+function BlogList() {
     const settings = {
         
         dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
+        // infinite: true,
+        // speed: 500,
+        slidesToShow: 2,
         slidesToScroll: 1,
-        autoplay: true,
-        arrows: false,
+        // autoplay: true,
+        arrows: true,
         pauseOnHover: true,
         focusOnSelect: true,
         responsive: [
             {
-              breakpoint: 1250,
+              breakpoint: 1300,
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
@@ -26,7 +26,7 @@ function ServiceList({serviceList}) {
               }
             },
             {
-              breakpoint: 950,
+              breakpoint: 1050,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
@@ -34,7 +34,7 @@ function ServiceList({serviceList}) {
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 700,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
@@ -42,20 +42,17 @@ function ServiceList({serviceList}) {
             }
           ]
     };
-    console.log("service list",serviceList);
     return (
         <Box className="center__carousel" sx={{ padding: "47px" }} >
             <Slider {...settings}>
-              {
-                serviceList?.map((item)=>{
-                 return <ServiceCard key={item?._id} item={item}/>
-                }
-                )
-              }
+                <BlogCard />
+                <BlogCard />
+                <BlogCard />
+                <BlogCard />
                 
             </Slider>
         </Box>
     )
 }
 
-export default ServiceList
+export default BlogList
